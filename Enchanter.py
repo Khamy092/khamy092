@@ -9,3 +9,19 @@ StudentID: 110341761
 EmailID: khamy092
 This is my own work as defined by the University's Academic Misconduct Policy.
 '''
+
+from Crafter import Crafter
+
+class Enchanter(Crafter):
+    def __init__(self) -> None:
+        pass
+
+    def craft(self):
+        pass
+
+    def disassemble(self):
+        pass
+
+    def enchant(self):
+        pass
+    

@@ -10,3 +10,38 @@ StudentID: 110341761
 EmailID: khamy092
 This is my own work as defined by the University's Academic Misconduct Policy.
 '''
+
+
+class Enchantment:
+    def __init__(self) -> None:
+        pass
+
+    def setEnchantmentName(self):
+        pass
+
+    def getEnchantmentName(self):
+        pass
+
+    def setEnchantmentEffect(self):
+        pass
+
+    def getEnchantmentEffect(self):
+        pass
+
+    def getMagicDamage(self):
+        pass
+
+    def setMagicDamage(self):
+        pass
+
+    def getPrimaryMaterial(self):
+        pass
+
+    def getCatalystMaterial(self):
+        pass
+
+    def calculateDamage(self):
+        pass
+
+    def useEffect(self):
+        pass
