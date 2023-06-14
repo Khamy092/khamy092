@@ -1,0 +1,1 @@
+# Forge Module (Inherits from Crafter)
