@@ -12,45 +12,72 @@ This is my own work as defined by the University's Academic Misconduct Policy.
 
 
 class Weapon:
-    def __init__(self) -> None:
-        pass
 
-    def setName(self):
-        pass
+    '''
+    This is the constructor for the Weapon class. It initializes the name,
+    damage, primaryMaterial, catalystMaterial and enchantment attributes.
+    It also contains all the getters and setters for the attributes.
+    '''
+    def __init__(self, name, damage, primaryMaterial, catalystMaterial, enchantment) -> None:
+        self._name = name
+        self._damage = damage
+        self._primaryMaterial = primaryMaterial
+        self._catalystMaterial = catalystMaterial
+        self._enchantment = enchantment
+        self._enchanted = False
 
-    def getName(self):
-        pass
 
-    def setDamage(self):
-        pass
+    # getters and setters for the attributes
+    
+    @property
+    def name(self):
+        return self._name
 
-    def getDamage(self):
-        pass
+    @name.setter    
+    def name(self, name):
+        self._name = name    
 
-    def setEnchanted(self):
-        pass
+    @property
+    def damage(self):
+        return self._damage
 
+    @damage.setter
+    def damage(self, damage):
+        self._damage = damage
+
+    @property
     def isEnchanted(self):
-        pass
+        return self._enchanted
+    
+    @isEnchanted.setter
+    def isenchanted(self, enchanted):
+        self._enchanted = enchanted
+    
+    @property
+    def primaryMaterial(self):
+        return self._primaryMaterial
 
-    def setPrimaryMaterial(self):
-        pass
+    @primaryMaterial.setter
+    def setPrimaryMaterial(self, primaryMaterial):
+        self._primaryMaterial = primaryMaterial
 
-    def getPrimaryMaterial(self):
-        pass
+    @property
+    def catalystMaterial(self):
+        return self._catalystMaterial
 
-    def setCatalystMaterial(self):
-        pass
+    @catalystMaterial.setter
+    def setCatalystMaterial(self, catalystMaterial):
+        self._catalystMaterial = catalystMaterial
 
-    def getCatalystMaterial(self):
-        pass
+    @property
+    def enchantment(self):
+        return self._enchantment
+    
+    @enchantment.setter
+    def setEnchantment(self, enchantment):
+        self._enchantment = enchantment
 
-    def setEnchantment(self):
-        pass
-
-    def getEnchantment(self):
-        pass
-
+    
     def calculateDamage(self):
         pass
 

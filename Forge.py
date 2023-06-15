@@ -10,15 +10,16 @@ StudentID: 110341761
 EmailID: khamy092
 This is my own work as defined by the University's Academic Misconduct Policy.
 '''
-
+from Weapon import *
 from Crafter import Crafter
 
 class Forge(Crafter):
-    def __init__(self) -> None:
-        pass
+    def __init__(self):
+        super().__init__()
 
     def craft(self):
         pass
-
+    
     def disassemble(self):
         pass
+    
