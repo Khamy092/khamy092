@@ -14,6 +14,7 @@ from Weapon import *
 from Enchantment import *
 from Enchanter import *
 from Forge import *
+from Weapon import *
 
 
 class Workshop:
@@ -35,8 +36,12 @@ class Workshop:
     # display all the weapons in the workshop
     def displayWeapons(self):
         for weapon in self._weapons:
-            if weapon is Weapon.isEnchanted:
-                print(weapon.getName() + " (Enchanted)")
+             
+            if weapon.isEnchanted():
+                print(f'A {weapon.getName()} is embued with a {Enchantment.useEffect()}. {weapon.attack()}')
+            
+            elif weapon.isEnchanted() == False:
+                print(f'A {weapon.getName()} is not enchanted. {weapon.attack()}')
 
             
             
@@ -81,3 +86,5 @@ class Workshop:
         # remove the material from the dictionary
         del self._materials[material]
         return self._materials
+
+    
