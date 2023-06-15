@@ -10,9 +10,16 @@ StudentID: 110341761
 EmailID: khamy092
 This is my own work as defined by the University's Academic Misconduct Policy.
 '''
-
+ 
 
 class Enchantment:
+
+    """
+    This class contains all the required attributes and methods for our Enchantment object.
+    It can calculate the damage of the enchantment used, and
+    contains the useEffect method which is used to apply the enchantment to the weapon.
+    """
+
     def __init__(self, name, magicDamage, effect, primaryMaterial, catalystMaterial):
         self._name = name
         self._magicDamage = magicDamage
@@ -20,7 +27,7 @@ class Enchantment:
         self._primaryMaterial = primaryMaterial
         self._catalystMaterial = catalystMaterial
 
-
+    # Getters and Setters
     @property
     def name(self):
         return self._name
@@ -63,7 +70,7 @@ class Enchantment:
 
     def calculateDamage(self):
         '''
-        This method calculates the damage of the enchantment.
+        This method calculates the damage of the enchantment using a specific formula.
         '''
         damage = self.primaryMaterial.strength * self.primaryMaterial.MagicPower + self.catalystMaterial.strength * self.catalystMaterial.MagicPower
         return damage
