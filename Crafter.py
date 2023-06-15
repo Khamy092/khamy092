@@ -1,5 +1,3 @@
-# Superclass for Forge and Enchanter
-
 
 '''
 File: Crafter.py
@@ -11,12 +9,22 @@ EmailID: khamy092
 This is my own work as defined by the University's Academic Misconduct Policy.
 '''
 
-class Crafter:
+from abc import ABC, abstractmethod
+
+class Crafter(ABC):
+
+    ''' 
+    Crafter is a superclass for the Forge and Enchanter classes. It contains the craft and
+    disassemble methods that are used in both the subclasses. This class is an abstract class and cannot be instantiated.'''
+
     def __init__(self) -> None:
         pass
 
+    # abstract methods
+    @abstractmethod
     def craft(self):
         pass
-
+    
+    @abstractmethod
     def disassemble(self):
         pass
