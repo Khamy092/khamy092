@@ -50,7 +50,7 @@ class Weapon:
         return self._enchanted
     
     @isEnchanted.setter
-    def isenchanted(self, enchanted):
+    def isEnchanted(self, enchanted):
         self._enchanted = enchanted
     
     @property
@@ -58,7 +58,7 @@ class Weapon:
         return self._primaryMaterial
 
     @primaryMaterial.setter
-    def setPrimaryMaterial(self, primaryMaterial):
+    def primaryMaterial(self, primaryMaterial):
         self._primaryMaterial = primaryMaterial
 
     @property
@@ -66,7 +66,7 @@ class Weapon:
         return self._catalystMaterial
 
     @catalystMaterial.setter
-    def setCatalystMaterial(self, catalystMaterial):
+    def catalystMaterial(self, catalystMaterial):
         self._catalystMaterial = catalystMaterial
 
     @property
@@ -74,7 +74,7 @@ class Weapon:
         return self._enchantment
     
     @enchantment.setter
-    def setEnchantment(self, enchantment):
+    def enchantment(self, enchantment):
         self._enchantment = enchantment
 
     
