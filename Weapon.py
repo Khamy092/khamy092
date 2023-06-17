@@ -101,4 +101,12 @@ class Weapon:
             return self._damage
 
     def attack(self):
-        pass
+            
+            """
+            This method returns a string that describes the attack of the weapon.
+            """
+
+            # rounding the damage to two decimal places
+            damageRounded = round(self._damage, 2)
+            
+            return f'It deals {damageRounded} damage.'
