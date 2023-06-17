@@ -21,7 +21,7 @@ class Weapon:
     '''
     def __init__(self, name, damage, primaryMaterial, catalystMaterial, enchantment=None):
         self._name = name
-        self._damage = damage
+        self._damage = float(damage)
         self._primaryMaterial = primaryMaterial
         self._catalystMaterial = catalystMaterial
         self._enchantment = enchantment
@@ -52,7 +52,7 @@ class Weapon:
     
     @isEnchanted.setter
     def isEnchanted(self, enchanted):
-        self._enchanted = enchanted
+        self._enchanted = bool(enchanted)
     
     @property
     def primaryMaterial(self):
