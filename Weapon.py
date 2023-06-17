@@ -10,6 +10,7 @@ EmailID: khamy092
 This is my own work as defined by the University's Academic Misconduct Policy.
 '''
 
+from Materials import *
 
 class Weapon:
 
@@ -18,7 +19,7 @@ class Weapon:
     damage, primaryMaterial, catalystMaterial and enchantment attributes.
     It also contains all the getters and setters for the attributes.
     '''
-    def __init__(self, name, damage, primaryMaterial, catalystMaterial, enchantment) -> None:
+    def __init__(self, name, damage, primaryMaterial, catalystMaterial, enchantment=None):
         self._name = name
         self._damage = damage
         self._primaryMaterial = primaryMaterial
@@ -79,7 +80,25 @@ class Weapon:
 
     
     def calculateDamage(self):
-        pass
+
+        """
+        This method calculates the damage of the weapon based on the materials used to create it.
+        """
+
+        # if the weapon is made of two peices of wood
+        if isinstance(self._primaryMaterial, Wood) and isinstance(self._catalystMaterial, Wood):
+            self._damage = self._primaryMaterial.strength * self._catalystMaterial.strength
+            return self._damage
+        
+        # if the weapon is made of two peices of metal
+        elif isinstance(self._primaryMaterial, Metal) and isinstance(self._catalystMaterial, Metal):
+            self._damage = (self._primaryMaterial.strength * self._catalystMaterial.strength) + (self._primaryMaterial.strength * self._catalystMaterial.strength)
+            return self._damage
+        
+        # if the weapon is made of a peice of metal and a peice of wood
+        elif isinstance(self._primaryMaterial, Metal) and isinstance(self._catalystMaterial, Wood) or isinstance(self._primaryMaterial, Wood) and isinstance(self._catalystMaterial, Metal):
+            self._damage = self._primaryMaterial.strength * (self._catalystMaterial.strength * self._catalystMaterial.purity)
+            return self._damage
 
     def attack(self):
         pass
