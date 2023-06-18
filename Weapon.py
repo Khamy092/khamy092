@@ -21,7 +21,7 @@ class Weapon:
     '''
     def __init__(self, name, primaryMaterial, catalystMaterial, damage=0,  enchantment=None):
         self._name = name
-        self._damage = float(damage)
+        self._damage = damage
         self._primaryMaterial = primaryMaterial
         self._catalystMaterial = catalystMaterial
         self._enchantment = enchantment

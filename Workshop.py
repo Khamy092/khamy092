@@ -13,7 +13,6 @@ from Materials import *
 from Weapon import *
 from Enchantment import *
 from Enchanter import *
-from Forge import *
 from Weapon import *
 
 

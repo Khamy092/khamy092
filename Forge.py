@@ -12,7 +12,8 @@ This is my own work as defined by the University's Academic Misconduct Policy.
 '''
 from Weapon import *
 from Crafter import Crafter
-from Workshop import *
+from Workshop import Workshop as Workshop
+from Enchanter import Enchanter as Enchanter
 
 
 
@@ -20,19 +21,20 @@ class Forge(Crafter):
     def __init__(self, name, primaryMaterial, catalystMaterial):
         Weapon.__init__(self, name, primaryMaterial, catalystMaterial)
 
+
     def craft(self, name, primaryMaterial, catalystMaterial):
         '''
         This method is used to create a weapon. It takes in the name, primary material and catalyst material as parameters.
         It then creates a weapon object and adds it to the weapons list in the Workshop class.
         It also removes the materials from the materials dictionary to reflect the change in the inventory.
         '''
-
+        workshop = Workshop(Enchanter(), Forge('name', 'primaryMaterial', 'catalystMaterial'))
         # create a weapon object
-        craftedWeapon = Weapon(name, primaryMaterial, catalystMaterial, Workshop.materials)
+        craftedWeapon = Weapon(name, primaryMaterial, catalystMaterial, workshop._materials)
         # add the weapon to the weapons list
-        Workshop.addWeapon(craftedWeapon)
+        workshop.addWeapon(craftedWeapon)
         # remove the materials from the materials dictionary
-        materials = Workshop.materials
+        materials = workshop._materials
         materials[primaryMaterial] -= 1
         materials[catalystMaterial] -= 1
 
@@ -42,12 +44,12 @@ class Forge(Crafter):
         It then removes the weapon from the weapons list in the Workshop class.
         It also adds the materials from the materials dictionary to reflect the change in the inventory.
         '''
-        
+        workshop = Workshop()
         # remove the weapon from the weapons list
-        Workshop.removeWeapon(weapon)
+        workshop.removeWeapon(weapon)
         
         # add the materials from the materials dictionary
-        materials = Workshop.materials
+        materials = workshop._materials
         materials[weapon.primaryMaterial] += 1
         materials[weapon.catalystMaterial] += 1
     
