@@ -37,22 +37,25 @@ class Enchanter(Crafter):
     # craft method: used to create enchantments
     def craft(self, enchantment, primaryMaterial, catalystMaterial, workshop_materials):
 
-        enchantment = Enchantment()
+        # create enchantment
+        CreatedEnchantment = Enchantment(enchantment, 0, enchantment.effect , primaryMaterial, catalystMaterial)
 
         # check if enchantment name is in recipes
-        if enchantment in self.recipes:
+        if enchantment in self.recipes.keys():
             # getting the enchantment's effect from the recipes dictionary
             enchantment.effect = self.recipes[enchantment]
+        
+        else:
+            # if enchantment name is not in recipes, then it is not a valid enchantment
+            print("Invalid enchantment name")
+            return
+        
+        # remove materials from workshop
+        workshop_materials[primaryMaterial] -= 1
+        workshop_materials[catalystMaterial] -= 1
 
-        # check if there are enough materials to craft the enchantment
-        if workshop_materials[primaryMaterial] >= 1 and workshop_materials[catalystMaterial] >= 1:
-            # remove materials from workshop
-            workshop_materials[primaryMaterial] -= 1
-            workshop_materials[catalystMaterial] -= 1
-
-        # create enchantment
-        enchantment = Enchantment(enchantment, 0, enchantment.effect , primaryMaterial, catalystMaterial)
-
+        return CreatedEnchantment
+    
     # disassemble method: used to disassemble enchantments
     def disassemble(self, enchantment, workshop_materials, workshop_enchantments): 
         

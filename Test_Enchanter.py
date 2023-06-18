@@ -11,11 +11,15 @@ def test_craft():
     '''
     # Create an Enchanter object
     workshop = Workshop(Enchanter(), Forge('Wood','Wood', 'Wood'))
-    workshop._materials = {Ruby(): 1, Onyx(): 1}
+    workshop.addMaterial(Ruby(), 5)
+    workshop.addMaterial(Onyx(), 5)
     
     # Call the craft method to craft an enchantment
-    
     enchantment = workshop.enchanter.craft("Lava", Ruby(), Onyx(), workshop._materials)
+    
+    enchantment.calculateMagicDamage()
+    enchantment.useEffect()
+    workshop.addEnchantment(enchantment)
 
     # check if the enchantment is crafted correctly by manually checking the string
     assert enchantment.name == "Lava"
