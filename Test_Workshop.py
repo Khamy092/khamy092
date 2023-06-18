@@ -88,4 +88,42 @@ def test_displayWeapons():
     # check if the weapon is displayed correctly
     assert displayed_content == expected_content, "The weapon is not displayed correctly"
     
+
+
+def test_displayEnchantments():
+    '''
+    This method tests the displayEnchantments method in the Workshop class.
+    '''
+    # creating a workshop object
+    workshop = Workshop(Enchanter(), Forge('Sword', 'Iron', 'Fire'))
+
+    # create an enchantment object
+    enchantment = Enchantment('Enchantment2', Diamond(), Diamond())
+    # calculate the magic damage of the enchantment
+    enchantment.calculateMagicDamage()
+    # use the enchantment
+    enchantment.useEffect()
+
+    # add the enchantment to the workshop
+    workshop.addEnchantment(enchantment)
+
+    # display the enchantments in the workshop
+    displayed_content = workshop.displayEnchantments()
+    # expected content
+    expected_content = f'An {enchantment.name} enchantment is stored in the workshop.'
+
+    # check if the enchantment dictionary is added to the workshop
+    assert enchantment in workshop._enchantments, "The enchantment is not in the workshop"  
+
+    # check if the enchantment is displayed correctly
+    assert displayed_content == expected_content, "The enchantment is not displayed correctly"
+
+
+
+
+
+
+
+
+
 # Note: We have an instance of the workshop class in each class because want to to isolate the tests for each class.

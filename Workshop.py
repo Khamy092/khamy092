@@ -48,7 +48,7 @@ class Workshop:
     # display all the enchantments in the workshop
     def displayEnchantments(self):
         for enchantment in self._enchantments:
-            print(f'An {enchantment.getEnchantmentName()} enchantment is stored in the workshop.')
+            return f'An {enchantment.name} enchantment is stored in the workshop.'
 
     # display all the materials in the workshop
     def displayMaterials(self):
