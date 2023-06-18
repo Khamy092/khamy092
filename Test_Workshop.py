@@ -25,6 +25,9 @@ def test_addWeapon():
     # check if the weapon was added to the workshop
     assert weapon in workshop._weapons
 
+    # checking if the number of weapons in the workshop is greater than 0 after adding a weapon
+    assert len(workshop._weapons) > 0, "The weapon is not added to the workshop"
+
 def test_removeWeapon():
     '''
     This method tests the removeWeapon method in the Workshop class.
@@ -84,5 +87,5 @@ def test_displayWeapons():
 
     # check if the weapon is displayed correctly
     assert displayed_content == expected_content, "The weapon is not displayed correctly"
-
+    
 # Note: We have an instance of the workshop class in each class because want to to isolate the tests for each class.
