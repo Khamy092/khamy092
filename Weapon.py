@@ -121,3 +121,6 @@ class Weapon:
             damageRounded = round(self._damage, 2)
             
             return f'It deals {damageRounded} damage.'
+    
+
+# all tests for the Weapon class done

@@ -11,6 +11,7 @@ EmailID: khamy092
 This is my own work as defined by the University's Academic Misconduct Policy.
 '''
  
+from Enchanter import *
 
 class Enchantment:
 
@@ -19,6 +20,8 @@ class Enchantment:
     It can calculate the damage of the enchantment used, and
     contains the useEffect method which is used to apply the enchantment to the weapon.
     """
+
+   
 
     def __init__(self, name, primaryMaterial, catalystMaterial):
         self._name = name
@@ -73,10 +76,15 @@ class Enchantment:
         This method calculates the damage of the enchantment using a specific formula.
         '''
         self.magicDamage = (self._primaryMaterial.strength * self._primaryMaterial.magicPower) + (self._catalystMaterial.strength * self._catalystMaterial.magicPower)
+        self.magicDamage = round(self.magicDamage, 2)
         return self.magicDamage
 
     def useEffect(self):
         '''
         This method applies the effect of the enchantment.
         '''
-        return f'The {self.name} enchantment {self.effect}'
+        enchanter = Enchanter()
+        
+        if self.name in enchanter.recipes:
+            self.effect = enchanter.recipes[self.name]
+            return f'{self.name} enchantment and {self.effect}'
