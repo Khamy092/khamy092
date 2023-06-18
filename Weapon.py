@@ -87,18 +87,29 @@ class Weapon:
 
         # if the weapon is made of two peices of wood
         if isinstance(self._primaryMaterial, Wood) and isinstance(self._catalystMaterial, Wood):
-            self._damage = self._primaryMaterial.strength * self._catalystMaterial.strength
-            return self._damage
+            try:
+                self._damage = self._primaryMaterial.strength * self._catalystMaterial.strength
+                return self._damage
+            except TypeError as e:
+                return e
         
         # if the weapon is made of two peices of metal
         elif isinstance(self._primaryMaterial, Metal) and isinstance(self._catalystMaterial, Metal):
-            self._damage = (self._primaryMaterial.strength * self._catalystMaterial.strength) + (self._primaryMaterial.strength * self._catalystMaterial.strength)
-            return self._damage
+            try:
+                self._damage = (self._primaryMaterial.strength * self.primaryMaterial.purity) * (self._catalystMaterial.strength * self._catalystMaterial.purity)
+                return self._damage
+            except TypeError as e:
+                return e
+
         
         # if the weapon is made of a peice of metal and a peice of wood
         elif isinstance(self._primaryMaterial, Metal) and isinstance(self._catalystMaterial, Wood) or isinstance(self._primaryMaterial, Wood) and isinstance(self._catalystMaterial, Metal):
-            self._damage = self._primaryMaterial.strength * (self._catalystMaterial.strength * self._catalystMaterial.purity)
-            return self._damage
+            try:
+                self._damage = self._primaryMaterial.strength * (self._catalystMaterial.strength * self._catalystMaterial.purity)
+                return self._damage
+            
+            except TypeError as e:
+                return e
 
     def attack(self):
             
