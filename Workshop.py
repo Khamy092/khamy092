@@ -53,7 +53,7 @@ class Workshop:
     # display all the materials in the workshop
     def displayMaterials(self):
         for material in self._materials:
-            print(f'A {material.__class__.__name__,}: {self._materials[material]} remaining.')
+            return f'A {material.__class__.__name__,}: {self._materials[material]} remaining.'
 
     # add a weapon to the workshop
     def addWeapon(self, Weapon):
@@ -88,3 +88,4 @@ class Workshop:
         return self._materials
 
     
+    # All tests are done and passed.

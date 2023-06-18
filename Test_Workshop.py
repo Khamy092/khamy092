@@ -63,6 +63,28 @@ def test_addEnchantment():
     # check if the enchantment was added to the workshop
     assert enchantment in workshop._enchantments
     
+def test_removeEnchantment():
+    '''
+    This method tests the removeEnchantment method in the Workshop class.
+    '''
+    workshop = Workshop(Enchanter(), Forge('Sword', 'Iron', 'Fire'))
+
+    # create an enchantment object
+    enchantment = Enchantment('Enchantment2', Diamond(), Diamond())
+    # calculate the magic damage of the enchantment
+    enchantment.calculateMagicDamage()
+    # use the enchantment
+    enchantment.useEffect()
+
+    # add the enchantment to the workshop
+    workshop.addEnchantment(enchantment)
+
+    # remove the enchantment from the workshop
+    workshop.removeEnchantment(enchantment)
+
+    # check if the enchantment was removed from the workshop
+    assert enchantment not in workshop._enchantments
+
 
 def test_displayWeapons():
     '''
@@ -121,9 +143,95 @@ def test_displayEnchantments():
 
 
 
+def test_enchantWeapon():
+
+    '''
+    This method tests the enchantWeapon method in the Workshop class.
+    '''
+    # creating a workshop object
+    workshop = Workshop(Enchanter(), Forge('Sword', 'Iron', 'Fire'))
+
+    # create a weapon object
+    weapon = Weapon("SampleWeapon4", Wood, Metal)
+
+    # add the weapon to the workshop
+    workshop.addWeapon(weapon)
+
+    # create an enchantment object
+    enchantment = Enchantment('Enchantment3', Diamond(), Diamond())
+    # calculate the magic damage of the enchantment
+    enchantment.calculateMagicDamage()
+    # use the enchantment
+    enchantment.useEffect()
+
+    # add the enchantment to the workshop
+    workshop.addEnchantment(enchantment)
+
+    # enchant the weapon
+    workshop.enchanter.enchant(weapon, enchantment.name, enchantment, workshop._enchantments)
+
+    # check if the weapon is enchanted
+    assert weapon.enchantment == enchantment, "The weapon is not enchanted"
+
+    # check if the weapon is enchanted correctly
+    assert weapon.enchantment.name == enchantment.name, "The weapon is not enchanted correctly"
 
 
+def test_displayMaterials():
+    '''
+    This method tests the displayMaterials method in the Workshop class.
+    '''
+    # creating a workshop object
+    workshop = Workshop(Enchanter(), Forge('Sword', 'Iron', 'Fire'))
+
+    # create a material object
+    material = Wood(5)
+    workshop.addMaterial(material, 5)
+    
+    # display the materials in the workshop
+    displayed_content = workshop.displayMaterials()
+    # expected content
+    expected_content = f'A {material.__class__.__name__,}: {workshop._materials[material]} remaining.'
+
+    # check if the material dictionary is added to the workshop
+    assert material in workshop._materials, "The material is not in the workshop"
+
+    # check if the material is displayed correctly
+    assert displayed_content == expected_content, "The material is not displayed correctly"
 
 
+def test_addMaterial():
+    '''
+    This method tests the addMaterial method in the Workshop class.
+    '''
+    # creating a workshop object
+    workshop = Workshop(Enchanter(), Forge('Sword', 'Iron', 'Fire'))
+
+    # create a material object
+    material = Wood(5)
+    workshop.addMaterial(material, 5)
+
+    # check if the material is added to the workshop
+    assert material in workshop._materials, "The material is not in the workshop"
+
+    # check if the material is added correctly
+    assert workshop._materials[material] == 5, "The material is not added correctly"
+
+def test_removeMaterial():
+    '''
+    This method tests the removeMaterial method in the Workshop class.
+    '''
+    # creating a workshop object
+    workshop = Workshop(Enchanter(), Forge('Sword', 'Iron', 'Fire'))
+
+    # create a material object
+    material = Wood(5)
+    workshop.addMaterial(material, 5)
+
+    # remove the material from the workshop
+    workshop.removeMaterial(material)
+
+    # check if the material is removed from the workshop
+    assert material not in workshop._materials, "The material is not in the workshop"
 
 # Note: We have an instance of the workshop class in each class because want to to isolate the tests for each class.
