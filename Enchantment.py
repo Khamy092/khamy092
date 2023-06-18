@@ -20,10 +20,10 @@ class Enchantment:
     contains the useEffect method which is used to apply the enchantment to the weapon.
     """
 
-    def __init__(self, name, magicDamage, effect, primaryMaterial, catalystMaterial):
+    def __init__(self, name, primaryMaterial, catalystMaterial):
         self._name = name
-        self._magicDamage = magicDamage
-        self._effect = effect
+        self._magicDamage = 0
+        self._effect = ""
         self._primaryMaterial = primaryMaterial
         self._catalystMaterial = catalystMaterial
 
@@ -68,12 +68,12 @@ class Enchantment:
     def catalystMaterial(self, catalystMaterial):
         self._catalystMaterial = catalystMaterial
 
-    def calculateDamage(self):
+    def calculateMagicDamage(self):
         '''
         This method calculates the damage of the enchantment using a specific formula.
         '''
-        damage = self.primaryMaterial.strength * self.primaryMaterial.MagicPower + self.catalystMaterial.strength * self.catalystMaterial.MagicPower
-        return damage
+        self.magicDamage = (self._primaryMaterial.strength * self._primaryMaterial.magicPower) + (self._catalystMaterial.strength * self._catalystMaterial.magicPower)
+        return self.magicDamage
 
     def useEffect(self):
         '''

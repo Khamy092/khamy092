@@ -12,7 +12,7 @@ This is my own work as defined by the University's Academic Misconduct Policy.
 '''
 from Weapon import *
 from Crafter import Crafter
-from Workshop import Workshop
+from Workshop import *
 
 class Forge(Crafter):
     def __init__(self, name, primaryMaterial, catalystMaterial):
@@ -25,7 +25,7 @@ class Forge(Crafter):
         It then creates a weapon object and adds it to the weapons list in the Workshop class.
         It also removes the materials from the materials dictionary to reflect the change in the inventory.
         '''
-        
+
         # create a weapon object
         craftedWeapon = Weapon(name, primaryMaterial, catalystMaterial, Workshop.materials)
         # add the weapon to the weapons list

@@ -67,7 +67,7 @@ class Workshop:
 
     # add an enchantment to the workshop
     def addEnchantment(self, enchantment):
-        self._enchantments.append(enchantment)
+        self._enchantments[enchantment] = enchantment
         return self._enchantments
     
     # remove an enchantment from the workshop

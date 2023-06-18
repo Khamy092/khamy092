@@ -19,7 +19,7 @@ class Weapon:
     damage, primaryMaterial, catalystMaterial and enchantment attributes.
     It also contains all the getters and setters for the attributes.
     '''
-    def __init__(self, name, damage, primaryMaterial, catalystMaterial, enchantment=None):
+    def __init__(self, name, primaryMaterial, catalystMaterial, damage=0,  enchantment=None):
         self._name = name
         self._damage = float(damage)
         self._primaryMaterial = primaryMaterial
