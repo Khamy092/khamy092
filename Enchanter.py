@@ -11,8 +11,8 @@ This is my own work as defined by the University's Academic Misconduct Policy.
 '''
 
 from Crafter import Crafter
-from Enchantment import *
 from Workshop import *
+from Enchantment import *
 
 class Enchanter(Crafter):
 
@@ -36,6 +36,8 @@ class Enchanter(Crafter):
 
     # craft method: used to create enchantments
     def craft(self, enchantment, primaryMaterial, catalystMaterial, workshop_materials):
+
+        enchantment = Enchantment()
 
         # check if enchantment name is in recipes
         if enchantment in self.recipes:

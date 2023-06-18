@@ -11,7 +11,7 @@ EmailID: khamy092
 This is my own work as defined by the University's Academic Misconduct Policy.
 '''
  
-from Enchanter import *
+from Enchanter import Enchanter
 
 class Enchantment:
 
@@ -83,8 +83,10 @@ class Enchantment:
         '''
         This method applies the effect of the enchantment.
         '''
+
         enchanter = Enchanter()
-        
+
+        # check if enchantment name is in recipes
         if self.name in enchanter.recipes:
             self.effect = enchanter.recipes[self.name]
             return f'{self.name} enchantment and {self.effect}'

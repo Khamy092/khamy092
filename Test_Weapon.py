@@ -1,8 +1,6 @@
 
 # Weapon Test Cases
 
-from Weapon import *
-from Materials import *
 from Workshop import *
 
 def test_calculateDamage():

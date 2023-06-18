@@ -1,8 +1,6 @@
 # Test file for Enchantment.py
 
-from Enchantment import *
-from Enchanter import *
-from Materials import *
+
 from Workshop import *
 
 

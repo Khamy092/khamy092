@@ -14,9 +14,10 @@ from Weapon import *
 from Crafter import Crafter
 from Workshop import *
 
+
+
 class Forge(Crafter):
     def __init__(self, name, primaryMaterial, catalystMaterial):
-        super().__init__()
         Weapon.__init__(self, name, primaryMaterial, catalystMaterial)
 
     def craft(self, name, primaryMaterial, catalystMaterial):
