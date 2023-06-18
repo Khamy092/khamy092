@@ -62,7 +62,11 @@ def test_displayWeapons():
     weapon = Weapon("SampleWeapon3", Wood, Metal)
     # add the weapon to the workshop
     workshop.addWeapon(weapon)
+
     # display the weapons in the workshop
+
     workshop.displayWeapons()
+    exceptectedOutput = f'A {weapon.name()} is not enchanted. {weapon.attack()}'
+
     # check if the weapon was displayed
-    assert weapon in workshop._weapons
+    assert workshop.displayWeapons() == exceptectedOutput

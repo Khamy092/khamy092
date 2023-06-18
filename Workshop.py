@@ -37,11 +37,11 @@ class Workshop:
     def displayWeapons(self):
         for weapon in self._weapons:
              
-            if weapon.isEnchanted():
-                print(f'A {weapon.getName()} is embued with a {weapon.useEffect()}. {weapon.attack()}')
+            if weapon.isEnchanted == True:
+                print(f'A {weapon.name()} is embued with a {weapon.useEffect()}. {weapon.attack()}')
             
-            elif weapon.isEnchanted() == False:
-                print(f'A {weapon.getName()} is not enchanted. {weapon.attack()}')
+            elif weapon.isEnchanted == False:
+                print(f'A {weapon.name()} is not enchanted. {weapon.attack()}')
 
             
             
