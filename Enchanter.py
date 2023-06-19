@@ -51,8 +51,8 @@ class Enchanter(Crafter):
             return
         
         # remove materials from workshop
-        workshop_materials[primaryMaterial] -= 1
-        workshop_materials[catalystMaterial] -= 1
+        workshop_materials[self._primaryMaterial.__class__.__name__] -= 1
+        workshop_materials[self._catalystMaterial.__class__.__name__] -= 1
 
         return CreatedEnchantment
     
@@ -65,8 +65,9 @@ class Enchanter(Crafter):
         """
         
         # add materials back into workshop materials dictionary
-        workshop_materials[enchantment.primaryMaterial] += 1
-        workshop_materials[enchantment.catalystMaterial] += 1
+        workshop_materials[self._primaryMaterial.__class__.__name__] += 1
+        workshop_materials[self._catalystMaterial.__class__.__name__] += 1
+        
 
         # delete enchantment object from workshop enchantments dictionary
         del workshop_enchantments[enchantment]

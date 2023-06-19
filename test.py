@@ -1,10 +1,5 @@
 
-from Workshop import *
-from Enchanter import Enchanter
-from Forge import Forge
-from Weapon import Weapon
-from Materials import *
-from Enchantment import *
+from AllClasses import *
 
 
 # Create a workshop, forge, enchanter.
@@ -74,8 +69,8 @@ workshop._enchantments[7], workshop._materials))
 
 print("------------------------------------Enchantments------------------------------------")
 print(workshop.displayEnchantments())
-print("-----------------------------------Material Store-----------------------------------")
-print(workshop.displayMaterials())
+# print("-----------------------------------Material Store-----------------------------------")
+# print(workshop.displayMaterials())
 
 # Enchant the following weapons: Sword, Shield, Axe, Scythe, Bow, Wand and Staff.
 for i in range(len(enchantedWeapons)):

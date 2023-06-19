@@ -30,15 +30,15 @@ class Forge(Crafter):
         '''
         workshop = Workshop(Enchanter(), Forge('name', 'primaryMaterial', 'catalystMaterial'))
         # create a weapon object
-        craftedWeapon = Weapon(name, primaryMaterial, catalystMaterial, workshop._materials)
+        craftedWeapon = Weapon(name, primaryMaterial, catalystMaterial, workshopMaterials)
         # add the weapon to the weapons list
         workshop.addWeapon(craftedWeapon)
+        workshopMaterials = workshop._materials
         # remove the materials from the materials dictionary
-        materials = workshop._materials
-        materials[primaryMaterial] -= 1
-        materials[catalystMaterial] -= 1
+        workshopMaterials[craftedWeapon.primaryMaterial.__class__.__name__] -= 1
+        workshopMaterials[craftedWeapon.catalystMaterial.__class__.__name__] -= 1
 
-    def disassemble(self, weapon):
+    def disassemble(self, weapon, workshopMaterials):
         '''
         This method is used to delete a weapon. It takes in the weapon to be deleted as a parameter.
         It then removes the weapon from the weapons list in the Workshop class.
@@ -49,7 +49,8 @@ class Forge(Crafter):
         workshop.removeWeapon(weapon)
         
         # add the materials from the materials dictionary
-        materials = workshop._materials
-        materials[weapon.primaryMaterial] += 1
-        materials[weapon.catalystMaterial] += 1
+        workshopMaterials = workshop._materials
+
+        workshopMaterials[weapon.primaryMaterial.__class__.__name__] += 1
+        workshopMaterials[weapon.catalystMaterial.__class__.__name__] += 1
     
