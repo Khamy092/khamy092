@@ -1,6 +1,6 @@
 # Welcome to My GitHub Profile!
 
-👋 Hi there! I'm Taqo, and this is my GitHub profile. I'm passionate about software development and open source projects. Here, you'll find a collection of my personal projects, contributions to various open source initiatives, and more. Feel free to explore, contribute, or simply drop by to say hello.
+👋 Hi there! I'm Taqi, and this is my GitHub profile. I'm passionate about software development, AI, ethical hacking, and open source projects. Here, you'll find a collection of my personal projects, contributions to various open source initiatives, and more. Feel free to explore, contribute, or simply drop by to say hello.
 
 ## About Me
 
