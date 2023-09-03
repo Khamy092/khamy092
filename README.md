@@ -24,7 +24,7 @@ I'm a firm believer in the power of open source software. I've contributed to va
 I love connecting with fellow developers and technology enthusiasts. You can reach me on:
 
 - [LinkedIn](https://www.linkedin.com/in/taqikhaliqy/)
-- [Website](www.taqi.au)
+- [Website](https://www.taqi.au/)
 - [Email](mailto:hi@taqi.au)
 
 Feel free to send me a message, ask a question, or just have a friendly chat about coding or any other topic that interests you.
