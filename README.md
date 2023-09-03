@@ -10,7 +10,7 @@ I'm a software developer with a keen interest in web development, machine learni
 
 Here are some of the projects you'll find in my GitHub repositories:
 
-- [Lending Boys]([https://www.youtube.com/watch?v=xIBwhXE3I54): A simple CRM for a broker
+- [Lending Boys]([https://www.youtube.com/watch?v=xIBwhXE3I54/): A simple CRM for a broker
 - [Salvatore's Slice of Italy](https://salvatorespizza.com.au/): A brief description of Project B.
 
 These are just a few examples of what I've been working on. Feel free to check them out, open issues, submit pull requests, or just give them a star if you find them interesting!
